@@ -1,0 +1,568 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=light>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../../../img/tab.png">
+  <link rel="icon" href="../../../../img/tab.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="bbski1014">
+  <meta name="keywords" content="programming">
+  
+    <meta name="description" content="title:物理实验author: bbski1014tags: learningdate: 物理实验《物理实验教程》孙秀平 测量误差与不确定度的评定一、测量和单位物理量：数值+单位 （采用国际单位制） 二、测量的分类按测量过程：  直接测量（将待测量与定标的测量仪器或量具比较，读出量值） 间接测量（通过相关物理量的直接测量，通过物理量之间一定的函数关系求出待测量的大小）  三、有效数字有效数字">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BLOG~bbski">
+<meta property="og:url" content="https://bbski1014.github.io/2022/04/15/%E7%89%A9%E7%90%86%E5%AE%9E%E9%AA%8C/index.html">
+<meta property="og:site_name" content="BLOG~bbski">
+<meta property="og:description" content="title:物理实验author: bbski1014tags: learningdate: 物理实验《物理实验教程》孙秀平 测量误差与不确定度的评定一、测量和单位物理量：数值+单位 （采用国际单位制） 二、测量的分类按测量过程：  直接测量（将待测量与定标的测量仪器或量具比较，读出量值） 间接测量（通过相关物理量的直接测量，通过物理量之间一定的函数关系求出待测量的大小）  三、有效数字有效数字">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/image-20220223100528364.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/物理实验.assets/image-20220225205109062.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/物理实验.assets/image-20220225205214278.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/物理实验.assets/image-20220225205342521.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/物理实验.assets/image-20220225205458888.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/物理实验.assets/image-20220223102729656.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/物理实验.assets/image-20220223102817979.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/物理实验.assets/image-20220225210241942.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/物理实验.assets/image-20220225210604927.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/物理实验.assets/image-20220225211225648.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/物理实验.assets/image-20220225211338754.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/物理实验.assets/image-20220225211427208.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/物理实验.assets/image-20220225211556251.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/物理实验.assets/image-20220225211824739.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/物理实验.assets/image-20220225212127865.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/物理实验.assets/image-20220225212325914.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/物理实验.assets/image-20220223110129867.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/物理实验.assets/image-20220225212629988.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/物理实验.assets/image-20220223110449489.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/物理实验.assets/image-20220225213424038.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/物理实验.assets/image-20220225213713878.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/物理实验.assets/image-20220225213908662.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/物理实验.assets/image-20220225213951499.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/物理实验.assets/image-20220223113821757.png">
+<meta property="article:published_time" content="2022-04-14T17:23:09.934Z">
+<meta property="article:modified_time" content="2022-04-14T17:34:04.573Z">
+<meta property="article:author" content="bbski1014">
+<meta property="article:tag" content="programming">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="d:/Myblog/bbksi1014.github.io/Blog/source_posts/image-20220223100528364.png">
+  
+  
+  <title>BLOG~bbski</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="../../../../css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"bbski1014.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="../../../../js/utils.js" ></script>
+  <script  src="../../../../js/color-schema.js" ></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="../../../../index.html">
+      <strong>BLOG_bbski1014</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../index.html">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('../../../../img/StockSnap_6WO19UZOEK.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      bbski1014
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-04-15 01:23" pubdate>
+        2022年4月15日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      790 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      7 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none"></h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：几秒前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <hr>
+<p>title:物理实验<br>author: bbski1014<br>tags: learning<br>date:</p>
+<h2 id="物理实验"><a href="#物理实验" class="headerlink" title="物理实验"></a>物理实验<img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\image-20220223100528364.png" srcset="/img/loading.gif" lazyload alt="image-20220223100528364"></h2><p>《物理实验教程》孙秀平</p>
+<h2 id="测量误差与不确定度的评定"><a href="#测量误差与不确定度的评定" class="headerlink" title="测量误差与不确定度的评定"></a>测量误差与不确定度的评定</h2><h2 id="一、测量和单位"><a href="#一、测量和单位" class="headerlink" title="一、测量和单位"></a>一、测量和单位</h2><p>物理量：数值+单位</p>
+<p>（采用国际单位制）</p>
+<h2 id="二、测量的分类"><a href="#二、测量的分类" class="headerlink" title="二、测量的分类"></a>二、测量的分类</h2><p>按测量过程：</p>
+<ul>
+<li>直接测量（将待测量与定标的测量仪器或量具比较，读出量值）</li>
+<li>间接测量（通过相关物理量的直接测量，通过物理量之间一定的函数关系求出待测量的大小）</li>
+</ul>
+<h2 id="三、有效数字"><a href="#三、有效数字" class="headerlink" title="三、有效数字"></a>三、有效数字</h2><h3 id="有效数字的概念："><a href="#有效数字的概念：" class="headerlink" title="有效数字的概念："></a>有效数字的概念：</h3><ul>
+<li>测量值的误差是不可避免，测量值包括<strong>精确数字和欠准数字</strong>两者总称为有效数字</li>
+<li>大学物理实验，通常<strong>只取一位欠准数字</strong></li>
+<li>有效数字反映了待测量的大小</li>
+</ul>
+<h3 id="有效数字性质："><a href="#有效数字性质：" class="headerlink" title="有效数字性质："></a>有效数字性质：</h3><ul>
+<li>有效数字位数与被测对象数值大小有关</li>
+<li>有效数字位数与测量仪器精度有关</li>
+</ul>
+<p><img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\物理实验.assets\image-20220225205109062.png" srcset="/img/loading.gif" lazyload alt="image-20220225205109062"></p>
+<p>（位数越多，越精确）</p>
+<p><img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\物理实验.assets\image-20220225205214278.png" srcset="/img/loading.gif" lazyload alt="image-20220225205214278"></p>
+<p>科学计数法不影响有效数字位数</p>
+<h3 id="有效数字修约法则和运算处理："><a href="#有效数字修约法则和运算处理：" class="headerlink" title="有效数字修约法则和运算处理："></a>有效数字修约法则和运算处理：</h3><h5 id="1、修约规则："><a href="#1、修约规则：" class="headerlink" title="1、修约规则："></a>1、修约规则：</h5><p>有不确定度时，尾数修约规则：</p>
+<p><img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\物理实验.assets\image-20220225205342521.png" srcset="/img/loading.gif" lazyload alt="image-20220225205342521"></p>
+<p><img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\物理实验.assets\image-20220225205458888.png" srcset="/img/loading.gif" lazyload alt="image-20220225205458888"></p>
+<h5 id="2、运算法则："><a href="#2、运算法则：" class="headerlink" title="2、运算法则："></a>2、运算法则：</h5><p><img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\物理实验.assets\image-20220223102729656.png" srcset="/img/loading.gif" lazyload alt="image-20220223102729656"></p>
+<p><img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\物理实验.assets\image-20220223102817979.png" srcset="/img/loading.gif" lazyload alt="image-20220223102817979"></p>
+<p>总的运算原则： <strong>抓两头</strong>，<strong>简化中间</strong></p>
+<p><img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\物理实验.assets\image-20220225210241942.png" srcset="/img/loading.gif" lazyload alt="image-20220225210241942"></p>
+<p><strong>仪器误差或最小分度决定测量值的有效数字位数</strong></p>
+<h2 id="四、误差与不确定度"><a href="#四、误差与不确定度" class="headerlink" title="四、误差与不确定度"></a>四、误差与不确定度</h2><h3 id="误差与真值："><a href="#误差与真值：" class="headerlink" title="误差与真值："></a>误差与真值：</h3><p><img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\物理实验.assets\image-20220225210604927.png" srcset="/img/loading.gif" lazyload alt="image-20220225210604927"></p>
+<h3 id="误差分类"><a href="#误差分类" class="headerlink" title="误差分类"></a><strong>误差分类</strong></h3><p>按特征和表现：</p>
+<ul>
+<li>系统误差—&gt;确定性</li>
+<li>随机误差—&gt;随机性</li>
+<li>粗差 —&gt;可剔除</li>
+</ul>
+<h3 id="不确定度"><a href="#不确定度" class="headerlink" title="不确定度"></a>不确定度</h3><p><strong>不确定度</strong>——测量结果正确程度的衡量标准，表示测量值可能变动的范围</p>
+<p>分类：</p>
+<ul>
+<li>直接测量量不确定度：分A类和B类</li>
+<li>间接测量量不确定度：有换算公式计算而得</li>
+</ul>
+<p><strong>（不确定度与误差是不同的量）</strong></p>
+<h4 id="A-直接测量量不确定度的计算分析："><a href="#A-直接测量量不确定度的计算分析：" class="headerlink" title="A.直接测量量不确定度的计算分析："></a><strong>A.直接测量量不确定度的计算分析：</strong></h4><p><img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\物理实验.assets\image-20220225211225648.png" srcset="/img/loading.gif" lazyload alt="image-20220225211225648"></p>
+<p><img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\物理实验.assets\image-20220225211338754.png" srcset="/img/loading.gif" lazyload alt="image-20220225211338754"></p>
+<p>例子：</p>
+<p><img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\物理实验.assets\image-20220225211427208.png" srcset="/img/loading.gif" lazyload alt="image-20220225211427208"></p>
+<p><img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\物理实验.assets\image-20220225211556251.png" srcset="/img/loading.gif" lazyload alt="image-20220225211556251"></p>
+<p><strong>注意上图的不确定度的估计原则</strong></p>
+<p>物理量的测量可分为 <strong>单次测量</strong> 和 <strong>多次测量</strong>：</p>
+<h4 id="一、单次测量"><a href="#一、单次测量" class="headerlink" title="一、单次测量"></a>一、单次测量</h4><p><img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\物理实验.assets\image-20220225211824739.png" srcset="/img/loading.gif" lazyload alt="image-20220225211824739"></p>
+<p>不确定度只有B类，A类为0（只测量了一次）记得要修约和对齐</p>
+<p>例子：</p>
+<p><img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\物理实验.assets\image-20220225212127865.png" srcset="/img/loading.gif" lazyload alt="image-20220225212127865"></p>
+<h4 id="二、多次重复测量"><a href="#二、多次重复测量" class="headerlink" title="二、多次重复测量"></a>二、多次重复测量</h4><p><img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\物理实验.assets\image-20220225212325914.png" srcset="/img/loading.gif" lazyload alt="image-20220225212325914"></p>
+<p>(A和B类都有)</p>
+<p>例子：</p>
+<p><img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\物理实验.assets\image-20220223110129867.png" srcset="/img/loading.gif" lazyload alt="image-20220223110129867"></p>
+<p><img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\物理实验.assets\image-20220225212629988.png" srcset="/img/loading.gif" lazyload alt="image-20220225212629988"></p>
+<h4 id="三、相对不确定度和百分差"><a href="#三、相对不确定度和百分差" class="headerlink" title="三、相对不确定度和百分差"></a>三、相对不确定度和百分差</h4><p><img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\物理实验.assets\image-20220223110449489.png" srcset="/img/loading.gif" lazyload alt="image-20220223110449489"></p>
+<p><strong>所有的不确定修约规则都是相同的</strong></p>
+<p>例子：</p>
+<p><img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\物理实验.assets\image-20220225213424038.png" srcset="/img/loading.gif" lazyload alt="image-20220225213424038"></p>
+<h4 id="B-间接测量量不确定度的结果表示与计算分析"><a href="#B-间接测量量不确定度的结果表示与计算分析" class="headerlink" title="B.间接测量量不确定度的结果表示与计算分析:"></a>B.<strong>间接测量量不确定度的结果表示与计算分析:</strong></h4><p><img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\物理实验.assets\image-20220225213713878.png" srcset="/img/loading.gif" lazyload alt="image-20220225213713878"></p>
+<p><img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\物理实验.assets\image-20220225213908662.png" srcset="/img/loading.gif" lazyload alt="image-20220225213908662"></p>
+<p>(注意第二条公式)</p>
+<p><img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\物理实验.assets\image-20220225213951499.png" srcset="/img/loading.gif" lazyload alt="image-20220225213951499"></p>
+<h2 id="五、数据的基本处理方法"><a href="#五、数据的基本处理方法" class="headerlink" title="五、数据的基本处理方法"></a>五、数据的基本处理方法</h2><p><strong>数据处理方法</strong></p>
+<ul>
+<li>列表法 </li>
+<li>作图法 （图要简明美观）（图解法，取图画上显示较远的两点）</li>
+<li>逐差法(自变量之间等间距变化的数据）（最小二乘法）</li>
+</ul>
+<p><img src="D:\Myblog\bbksi1014.github.io\Blog\source_posts\物理实验.assets\image-20220223113821757.png" srcset="/img/loading.gif" lazyload alt="image-20220223113821757"></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="../../14/test/">
+                        <span class="hidden-mobile">极限</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="../../../../js/events.js" ></script>
+<script  src="../../../../js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="../../../../js/local-search.js" ></script>
+
+
+
+  
+    <script  src="../../../../js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="../../../../js/boot.js" ></script>
+
+
+</body>
+</html>
