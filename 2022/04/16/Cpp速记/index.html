@@ -44,7 +44,15 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+      
+        
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css" />
+      
     
   
 
@@ -258,7 +266,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：21 分钟前
+                  本文最后更新于：1 小时前
                 
               </p>
             
@@ -327,17 +335,30 @@
 <p>类里面定义的变量都是局部变量</p>
 <p>注意分号别少</p>
 <p>访问控制修饰符（省略了就默认是 private）</p>
-<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs C++"><span class="hljs-keyword">class</span><br>&#123;<br>    <span class="hljs-keyword">public</span>:<br>    	<span class="hljs-type">int</span> a,d;<br>    <span class="hljs-keyword">protected</span>:<br>    	<span class="hljs-type">double</span> b;<br>    	string f;<br>    <span class="hljs-keyword">private</span>:<br>    	<span class="hljs-type">float</span> c;<br>    <span class="hljs-comment">//成员函数类似定义格式</span><br>    <span class="hljs-keyword">public</span>:<br>    	<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">SetA</span><span class="hljs-params">(<span class="hljs-type">int</span>)</span></span>;<br>    	<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">GetA</span><span class="hljs-params">()</span></span>;<br>&#125;;<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">class
+&#123;
+    public:
+    	int a,d;
+    protected:
+    	double b;
+    	string f;
+    private:
+    	float c;
+    &#x2F;&#x2F;成员函数类似定义格式
+    public:
+    	void SetA(int);
+    	int GetA();
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
 
 
 
 <p><strong>定义类的对象</strong></p>
-<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css">类名 对象名<span class="hljs-number">1</span>，<span class="hljs-selector-attr">[对象2，……，对象n]</span><br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">类名 对象名1，[对象2，……，对象n]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
 
 
 <p><strong>访问数据成员</strong></p>
-<figure class="highlight"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs">对象名.成员<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">对象名.成员<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
 <p>在类定义内部，成员之间可直接访问</p>
 <p>在类的外部，只有public属性的成员，可以通过该格式直接访问（比如main函数）</p>
@@ -370,12 +391,25 @@
 <li>需要初始化const修饰的类成员或初始化引用成员数据；</li>
 <li>子类只能用列表初始化父类的私有成员；</li>
 </ul>
-<figure class="highlight angelscript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs angelscript"><span class="hljs-keyword">class</span> <span class="hljs-symbol">Test</span><br>&#123;<br>	<span class="hljs-keyword">private</span>:<br>		<span class="hljs-built_in">int</span> a;<br>&#125;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-symbol">Test2:<span class="hljs-symbol">public</span></span> <span class="hljs-symbol">Test</span><br>&#123;	<br>	<span class="hljs-keyword">public</span>:<br>		Test2:Tset(<span class="hljs-number">2</span>)&#123;<br>			<span class="hljs-comment">//Test(2);//不能在内部调用，报错</span><br>		&#125;;<br><br>&#125;;<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">class Test
+&#123;
+	private:
+		int a;
+&#125;;
+
+class Test2:public Test
+&#123;	
+	public:
+		Test2:Tset(2)&#123;
+			&#x2F;&#x2F;Test(2);&#x2F;&#x2F;不能在内部调用，报错
+		&#125;;
+
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
 
 
 
 <h4 id="复制构造函数"><a href="#复制构造函数" class="headerlink" title="复制构造函数"></a>复制构造函数</h4><p>不自定义会自动生成</p>
-<figure class="highlight abnf"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs abnf">类名(const 类名 对象名)<span class="hljs-comment">;</span><br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">类名(const 类名 对象名);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
 <p>系统调用复制构造函数的三种情况：</p>
 <ol>
@@ -383,7 +417,7 @@
 <li>函数形参为一个对象（如果时引用或者指针对象的形参，则不会调用</li>
 <li>对象作为返回值</li>
 </ol>
-<h4 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h4><figure class="highlight 1c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs 1c"><span class="hljs-symbol">~类名( )</span>;<br></code></pre></div></td></tr></table></figure>
+<h4 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h4><div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">~类名( );<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
 <p><strong>注意：</strong></p>
 <ul>
@@ -539,6 +573,8 @@
 
 
 
+  
+    
   
 
 
