@@ -1,0 +1,1247 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=light>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../../../img/tab.png">
+  <link rel="icon" href="../../../../img/tab.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="bbski1014">
+  <meta name="keywords" content="programming">
+  
+    <meta name="description" content="线代NOTE 相关网站 线代启示 需要补充的 Laplace展开定理 分块矩阵的行列式计算 行列式章节 行列式 定义 由n^2个元素a_ij(i,j&#x3D;1……n)排成一个n行n列的正方形数表： \[ \left|     \begin{matrix}     a_{11}&amp;a_{12}&amp;a_{13}&amp;\cdots&amp;a_{1n}\\     a_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线代Note">
+<meta property="og:url" content="https://bbski1014.github.io/2022/04/18/%E7%BA%BF%E4%BB%A3Note/index.html">
+<meta property="og:site_name" content="BLOG~bbski">
+<meta property="og:description" content="线代NOTE 相关网站 线代启示 需要补充的 Laplace展开定理 分块矩阵的行列式计算 行列式章节 行列式 定义 由n^2个元素a_ij(i,j&#x3D;1……n)排成一个n行n列的正方形数表： \[ \left|     \begin{matrix}     a_{11}&amp;a_{12}&amp;a_{13}&amp;\cdots&amp;a_{1n}\\     a_">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E7%BA%BF%E4%BB%A3Note.assets/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAeWt6Y3MyMDAw,size_20,color_FFFFFF,t_70,g_se,x_16.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E7%BA%BF%E4%BB%A3Note.assets/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAeWt6Y3MyMDAw,size_20,color_FFFFFF,t_70,g_se,x_16-16502687454271.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E7%BA%BF%E4%BB%A3Note.assets/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAeWt6Y3MyMDAw,size_20,color_FFFFFF,t_70,g_se,x_16-16502687454272.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E7%BA%BF%E4%BB%A3Note.assets/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAeWt6Y3MyMDAw,size_20,color_FFFFFF,t_70,g_se,x_16.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E7%BA%BF%E4%BB%A3Note.assets/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAeWt6Y3MyMDAw,size_20,color_FFFFFF,t_70,g_se,x_16-16502687454271.png">
+<meta property="og:image" content="c:/Users/L/OneDrive/桌面/开学文件/Typora%20Note/线代Note.assets/image-20220320124851567.png">
+<meta property="article:published_time" content="2022-04-18T07:58:03.000Z">
+<meta property="article:modified_time" content="2022-04-18T08:05:59.880Z">
+<meta property="article:author" content="bbski1014">
+<meta property="article:tag" content="note">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="d:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E7%BA%BF%E4%BB%A3Note.assets/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAeWt6Y3MyMDAw,size_20,color_FFFFFF,t_70,g_se,x_16.png">
+  
+  
+  <title>线代Note - BLOG~bbski</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      
+        
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css" />
+      
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="../../../../css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"bbski1014.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="../../../../js/utils.js" ></script>
+  <script  src="../../../../js/color-schema.js" ></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="../../../../index.html">
+      <strong>BLOG_bbski1014</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../index.html">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('../../../../img/StockSnap_6WO19UZOEK.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="线代Note">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      bbski1014
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-04-18 15:58" pubdate>
+        2022年4月18日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      14k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      116 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">线代Note</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：几秒前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="线代note">线代NOTE</h1>
+<p>相关网站 <a target="_blank" rel="noopener" href="https://ccjou.wordpress.com/">线代启示</a></p>
+<p>需要补充的</p>
+<p>Laplace展开定理</p>
+<p>分块矩阵的行列式计算</p>
+<p>行列式章节</p>
+<h1 id="行列式">行列式</h1>
+<h2 id="定义">定义</h2>
+<p>由n^2个元素a_ij(i,j=1……n)排成一个n行n列的正方形数表： <span class="math display">\[
+\left|
+    \begin{matrix}
+    a_{11}&amp;a_{12}&amp;a_{13}&amp;\cdots&amp;a_{1n}\\
+    a_{21}&amp;a_{22}&amp;a_{23}&amp;\cdots&amp;a_{2n}\\
+    \vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;a_{3n}\\
+    a_{n1}&amp;a_{n2}&amp;a_{n3}&amp;\cdots&amp;a_{nn}
+    \end{matrix}
+\right|
+\]</span> 由这个数表所决定的数， <span class="math display">\[
+\sum_{p_1p_2p_3\cdots{p_n}}(-1)^{t^{(p_1p_2p_3\cdots{p_n})}}a_{1p_1}a_{2p_2}a_{3p_3}\cdots{a_{np_n}}(第一定义)
+\]</span> 称为这个n x n 数表构成的n阶行列式，记为 <span class="math display">\[
+D_n=\left|
+    \begin{matrix}
+    a_{11}&amp;a_{12}&amp;a_{13}&amp;\cdots&amp;a_{1n}\\
+    a_{21}&amp;a_{22}&amp;a_{23}&amp;\cdots&amp;a_{2n}\\
+    \vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;a_{3n}\\
+    a_{n1}&amp;a_{n2}&amp;a_{n3}&amp;\cdots&amp;a_{nn}
+    \end{matrix}
+\right|
+=
+\sum_{p_1p_2p_3\cdots{p_n}}(-1)^{t^{(p_1p_2p_3\cdots{p_n})}}a_{1p_1}a_{2p_2}a_{3p_3}\cdots{a_{np_n}}\\
+t^{(p_1p_2p_3\cdots{p_n})}为n阶全排列{p_1p_2p_3\cdots{p_n}}的逆序数
+\]</span> 若有方阵A，简记其行列式|A|，或|A|=det(a_ij)_、|a_ij|_nxn、|a_ij|_n</p>
+<p>特别的，|a_11|=a_11</p>
+<p>上述是行列式按列标全排列的所有可能(按行展开,行标是自然排列)来定义的，按行标(按列展开，列标不是自然排列)亦可 <span class="math display">\[
+\sum_{p_1p_2p_3\cdots{p_n}}(-1)^{t^{(p_1p_2p_3\cdots{p_n})}}a_{p_1{1}}a_{p_2{2}}a_{p_3{3}}\cdots{a_{p_nn}}(第二定义)
+\]</span> *<strong>也可以，不按行不按列展开(行标，列标都不是标准排列），这样某一项的<u>正负是有行标和列标各自的全排列的逆序数之和决定</u></strong>(第三定义)</p>
+<h2 id="排列和逆序数">排列和逆序数</h2>
+<p>定义1：从1,2,3，……,n中任意选取r个不同的书排成一列，称为排列</p>
+<p>定义2：将1,2,3，……,n这n个不同的数排成一列，成为n阶全排列，简称全排列，数量为n！</p>
+<p>定义3：如果一个排列中，存在排在左边的数必排在其右边的数大，即破坏了排列的自然顺序，则称他们为一个逆序；</p>
+<p>​ <strong>一个排列中逆序的总数称为这个排列的逆序数</strong></p>
+<p>定义4：逆序数为偶数的排列称为偶排列；逆序数称为奇数的排列称为奇排列。</p>
+<p>定理1：元素对换改变排列奇偶性</p>
+<p>定理2：在n阶全排列中，偶排列和奇排列各占一半，即各有n!/2</p>
+<h2 id="性质">性质</h2>
+<p>性质1：D^T=D(第一和第二定义)</p>
+<p>性质2：两行对换，D‘=-D(第三定义)</p>
+<p>性质3：两行相等，D=0 （2的推论-D=D,即D+D=0）</p>
+<p>性质4：某一行有公因子k，可朝外提取1次；全部行有公因子k，可向外提取n次，即k^n</p>
+<p>性质5：存在两行对应成比例，D=0</p>
+<p>性质6：某一行全为0，则D=0</p>
+<p>注意：D=0并不意味着性质3，5，6存在一个</p>
+<p>如，下述行列式为0 <span class="math display">\[
+\left|
+\begin{matrix} 
+   1 &amp; 2 &amp; 3\\
+   4 &amp; 5 &amp; 6\\
+   7 &amp; 8 &amp; 9
+\end{matrix}
+\right|
+\]</span> 性质7：行列式中，是行的那一行分开，<strong>其余行保持不变</strong>(容易错误) <span class="math display">\[
+\left|
+\begin{matrix} 
+   b+c &amp; c+a &amp; a+b\\
+   a+b &amp; b+c &amp; c+a\\
+   c+a &amp; a+b &amp; b+c
+\end{matrix}
+\right|
+=
+\left|
+\begin{matrix} 
+   b &amp; c &amp; a\\
+   a+b &amp; b+c &amp; c+a\\
+   c+a &amp; a+b &amp; b+c
+\end{matrix}
+\right|
++\left|
+\begin{matrix} 
+   c &amp; a &amp; b\\
+   a+b &amp; b+c &amp; c+a\\
+   c+a &amp; a+b &amp; b+c
+\end{matrix}
+\right|
+\\(一共可展开8项)
+\]</span> *性质8：某一行乘以一个数加到另一行，行列式的值不变(不能说减去)</p>
+<p><strong>根据行列式，行与列地位同等的定理，上述性质， 对行也成立。</strong></p>
+<h2 id="行列式的展开">行列式的展开</h2>
+<h3 id="代数余子式和余子式">代数余子式和余子式</h3>
+<p><span class="math display">\[
+A_{ij}=(-1)^{(i+j)}M_{ij}
+\]</span></p>
+<p>设有行列式|A|，则 <span class="math display">\[
+|A|=a_{i1}A_{i1}+a_{i2}A_{i2}+\cdots+a_{in}A_{in}
+\]</span> 和 <span class="math display">\[
+|A|=a_{1j}A_{1j}+a_{2j}A_{2j}+\cdots+a_{nj}A_{nj}
+\]</span> 则称上述两式分别为<strong>|A|按第i行展开的展开式和按第j列展开的展开式</strong></p>
+<p><strong>异乘变零定理：</strong>某一行元素与另一行元素的代数余子式的乘积之和为0(与伴随矩阵有关,证明从两行相等，行列式为0的角度思考)</p>
+<p>(对列也成立)</p>
+<h3 id="拉普拉斯展开定理">拉普拉斯展开定理</h3>
+<p>取定行列式k行，有k行元素组成的所有k阶子式与与代数余子式乘积之和为D，正负由取定的k行 和 k列的下标之和决定</p>
+<h2 id="行列式和特殊行列式的计算">行列式和特殊行列式的计算</h2>
+<p>同阶行列式相乘：可按矩阵相乘运算来算</p>
+<p>不同阶或者同阶，行列式相乘的结果就是两行列式的数值相乘。</p>
+<p>熟悉2阶和3阶行列式的计算</p>
+<p>上三角方阵和下三角方阵的行列式皆为，主对角线元素的乘积</p>
+<p>反上三角和下三角方阵的行列式为，次对角元素相乘，正负有对角线列标之和决定</p>
+<p>三叉形行列式</p>
+<p>范德蒙德行列式的计算公式要掌握</p>
+<p>反对称行列式，奇数阶，D=0</p>
+<h2 id="克莱姆法则">克莱姆法则</h2>
+<h1 id="矩阵">矩阵</h1>
+<h2 id="矩阵定义">1、矩阵定义</h2>
+<h3 id="线性方程组">1、线性方程组</h3>
+<p>对于一个由m个方程和n个未知量的线性方程组： <span class="math display">\[
+\begin{cases}
+                                    a_{11}x_{1}+a_{12}x_{2}+\cdots+a_{1n}x_{n}=b_{1}\\
+    a_{11}x_{1}+a_{12}x_{2}+\cdots+a_{1n}x_{n}=b_{2}\\
+    \cdots\cdots\cdots\\
+    a_{m1}x_{1}+a_{m2}x_{2}+\cdots+a_{mn}x_{n}=b_{m}
+\end{cases}
+\]</span></p>
+<p>在这个线性方程组中，重要信息是<strong>未知量的个数</strong> 以及 <strong>未知量系数</strong>和<strong>常数项</strong>,由此可以组成一个m x (n+1)规格的有序数表，用来反映出对应的线性方程组的所有信息。 <span class="math display">\[
+\widetilde{A}=\left(
+    \begin{matrix}
+    a_{11}&amp;a_{12}&amp;a_{13}&amp;\cdots&amp;a_{1n}&amp;b_{1}\\
+    a_{11}&amp;a_{12}&amp;a_{13}&amp;\cdots&amp;a_{2n}&amp;b_{1}\\
+    \vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;a_{3n}&amp;\vdots\\
+    a_{11}&amp;a_{12}&amp;a_{13}&amp;\cdots&amp;a_{mn}&amp;b_{1}
+    \end{matrix}
+\right)
+\]</span> 将这样的一个数表称为一个m x n矩阵，可以简记为（a_ij),或者（a_ij)_m x n</p>
+<h3 id="特殊矩阵">2、特殊矩阵</h3>
+<p><span class="math display">\[
+\begin{align}
+&amp;1\times1{矩阵}A=(a){，记A=a}\\
+&amp;1\times{n}{矩阵}A=(a_{1},a_{2},\cdots,a_{n}){,称行矩阵，亦称n维行向量}\\
+&amp;m\times1{矩阵}A=\left(
+    \begin{matrix}
+        a_{1}\\
+        a_{2}\\
+        \vdots
+        a_{m}
+    \end{matrix}
+\right)
+称为列矩阵，亦称m维列向量\\
+&amp;{所有元素都是0的矩阵称为零矩阵，记O}\\
+\end{align}\\
+\]</span></p>
+<h3 id="n阶方阵">3、n阶方阵</h3>
+<p>主对角线的概念只存在于方阵中 <span class="math display">\[
+\begin{align}
+&amp;{n}\times{n}{矩阵称为n阶方针}\\
+&amp;A=\left(
+    \begin{matrix}
+        a_{11}&amp;a_{12}&amp;\cdots&amp;a_{1n}\\
+        a_{21}&amp;a_{22}&amp;\cdots&amp;a_{2n}\\
+        \vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
+        a_{n1}&amp;a_{n2}&amp;\cdots&amp;a_{nn}
+    \end{matrix}
+\right)\\
+\\
+&amp;{对角矩阵:a_{ij}=0,当i&gt;j时}\\
+&amp;A=\left(
+    \begin{matrix}
+        a_{11}&amp;0&amp;\cdots&amp;0\\
+        0&amp;a_{22}&amp;\cdots&amp;0\\
+        \vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
+        0&amp;0&amp;\cdots&amp;a_{nn}
+    \end{matrix}
+\right)\\
+&amp;{称为n阶对角矩阵，记diag(a_{11},a_{22},\cdots,a_{nn})}\\
+\\
+&amp;当a_{11}=a_{22}=\cdots=a_{nn}，称数量矩阵\\
+&amp;A=\left(
+    \begin{matrix}
+        a&amp;0&amp;\cdots&amp;0\\
+        0&amp;a&amp;\cdots&amp;0\\
+        \vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
+        0&amp;0&amp;\cdots&amp;a
+    \end{matrix}
+\right)\\
+\\
+&amp;当a_{ii}=1，就称这个矩阵为n阶单位矩阵，记为E_n或E\\
+&amp;A=3
+\\
+&amp;{最后注意，}A=aE\\
+\end{align}
+\]</span> <strong>（一般空的地方表示元素是0）</strong></p>
+<h4 id="关于对角矩阵的性质">关于对角矩阵的性质：</h4>
+$$ (
+<span class="math display">\[\begin{matrix}
+        1&amp;2&amp;3\\
+        2&amp;2&amp;3\\
+        1&amp;3&amp;4
+    \end{matrix}\]</span>
+<p>)</p>
+(
+<span class="math display">\[\begin{matrix}
+        k_{1}&amp;0&amp;0\\
+        0&amp;k_{2}&amp;0\\
+        0&amp;0&amp;k_{3}
+    \end{matrix}\]</span>
+<h1 id="section">)</h1>
+(
+<span class="math display">\[\begin{matrix}
+        1_1&amp;2k_1&amp;3k_1\\
+        2k_2&amp;2k_2&amp;3k_2\\
+        1k_3&amp;3k_3&amp;4k_3
+    \end{matrix}\]</span>
+<p>)</p>
+\ (
+<span class="math display">\[\begin{matrix}
+        a_{1}&amp;0&amp;0\\
+        0&amp;a_{2}&amp;0\\
+        0&amp;0&amp;a_{3}
+    \end{matrix}\]</span>
+<p>)</p>
+(
+<span class="math display">\[\begin{matrix}
+        k_{1}&amp;0&amp;0\\
+        0&amp;k_{2}&amp;0\\
+        0&amp;0&amp;k_{3}
+    \end{matrix}\]</span>
+<h1 id="section-1">)</h1>
+(
+<span class="math display">\[\begin{matrix}
+        1k_1&amp;2k_3&amp;3k_3\\
+        2k_1&amp;2k_2&amp;3k_3\\
+        1k_1&amp;3k_3&amp;4k_3
+    \end{matrix}\]</span>
+<p>) $$</p>
+<p><strong>左行右列</strong></p>
+<h4 id="对称矩阵和反对称矩阵属于方阵">对称矩阵和反对称矩阵(属于方阵)</h4>
+<p><span class="math display">\[
+\begin{align}
+&amp;对称矩阵满足a_{ij}=a_{ji},满足A^T=A\\
+&amp;反对称矩阵满足a_{ij}=a_{ji},满足A^T=-A
+\end{align}
+\]</span></p>
+<h3 id="矩阵的相等">4、矩阵的相等</h3>
+<p>两个矩阵行数，列数分别相等，则称两个矩阵为同形矩阵；</p>
+<p>（相等前提）</p>
+<p>如果两个同形矩阵对应元素都相等，则A=B,两矩阵相等。</p>
+<p>注意：两个零矩阵之间的规格可能不等，也就是两个零矩阵不一定相等</p>
+<h2 id="矩阵线性运算与运算律">2、矩阵线性运算与运算律</h2>
+<h4 id="矩阵加法">矩阵加法</h4>
+<p>设A，B是同形矩阵，则A+B为对应元素相加之后的得到的矩阵</p>
+<p><strong>加法运算律：</strong></p>
+<ul>
+<li>交换律:A+B=B+A</li>
+<li>结合律:(A+B)+C=A+(B+C)</li>
+<li>A+O=O+A=A</li>
+</ul>
+<h4 id="矩阵数乘">矩阵数乘</h4>
+<p>kA=aK=(ka_ij)_m x n</p>
+<p>k(A+B)=kA+kB</p>
+<p>(kl)A=k(lA)=l(kA)</p>
+<p>0A_m xn=O_mxn</p>
+<p>(矩阵提公因子：矩阵所有元素有公因子k,公因子向外提取一次，与行列式不同)</p>
+<h4 id="矩阵乘法">矩阵乘法</h4>
+<p><strong>设有两个矩阵A_mxp与B_qxn，两矩阵可相乘的前提条件是，p=q;</strong></p>
+<p>(相等可乘，不等不乘)</p>
+<p>得出的矩阵的规格为m x n;</p>
+<p>(中间相等取两头m p q n) <span class="math display">\[
+c_{ij}=\sum^{p}_{k=1}a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{ip}b_{pj}
+\]</span></p>
+<h4 id="矩阵乘法运算律">矩阵乘法运算律</h4>
+<ul>
+<li>结合律(AB)C=A(BC)</li>
+<li>分配律A(B+C)=AB+AC,(A+B)C=AC+BC</li>
+<li>(kA)B=A(kB)=k(AB)</li>
+<li><strong>E_m A_mxn = A_mxn E_n = A_mxn（很重要）</strong></li>
+<li>矩阵矩阵左乘右乘一个零矩阵得到的都是零矩阵</li>
+</ul>
+<h4 id="矩阵乘法不满足三规律容易错误">*矩阵乘法不满足三规律(容易错误)</h4>
+<ul>
+<li>AB=O不能推出A=O或B=O</li>
+<li>AB=AC,A≠O不能推出B=C</li>
+<li>AB≠BA，AB有意义,BA不一定有意义</li>
+</ul>
+<p>(若AB=BA，说明AB可交换，可交换的必要条件是m=n，p=q)</p>
+<p>(所以算矩阵方程时要注意相乘的位置)</p>
+<h4 id="矩阵的幂运算">矩阵的幂运算</h4>
+<p>矩阵具有幂运算的前提是，A是一个n阶方阵 <span class="math display">\[
+A^{k}=\underbrace{AA\cdots{A}}_{k}\\
+{}
+\\
+A^{k_{1}}A^{k_{2}}=A^{k_1+k_2}
+\\
+{(A^{k_1})}^{k_2}=A^{k_{1}k_{2}}
+\\
+{但是要注意，因为矩阵乘法不满足交换律(AB=BA)，一般情况\\
+下,下列公式是不成立的}\\
+(AB)^{k}\neq{A^kB^k}\\
+(A+B)^2\neq{A^2+2AB+B^2}\\
+(A+B)(A-B)\neq{A^2-B^2}\\由于AE=EA,下列公式是成立的
+\]</span> <strong>特殊地，因为AE=EA,下列公式是成立的</strong> <span class="math display">\[
+(AE)^{k}={A^kE^k}\\
+(A+E)^2={A^2+2AE+E^2}\\
+(A+E)(A-E)={A^2-E^2}\\
+\]</span></p>
+<h2 id="矩阵转置">3、矩阵转置</h2>
+<p>矩阵同序列的行换成同序列的列 <span class="math display">\[
+a_{ij}=a_{ji}
+\]</span></p>
+<h3 id="运算律">运算律：</h3>
+<p>设A和B和C为同形矩阵： <span class="math display">\[
+{(A^{T})}^{T}=A\\
+{(A+B)}^{T}=A^{T}+B^{T}\\
+(AB)^{T}=B^TA^T\\
+{(kA)}^T=kA^T
+\]</span> <strong>(注意第一条和第三条)</strong></p>
+<p>推广： <span class="math display">\[
+(A+B+C)^T=A^T+B^T+C^T\\
+(A_1A_2A_3A_4)^T={A_4}^T{A_3}^T{A_2}^T{A_1}^T
+\]</span></p>
+<h3 id="对称矩阵和反对称矩阵及其转置特殊方阵">对称矩阵和反对称矩阵及其转置(特殊方阵)</h3>
+<p><span class="math display">\[
+\begin{align}
+&amp;对称矩阵满足a_{ij}=a_{ji},满足A^T=A\\
+&amp;设有A,B两个同阶对称方阵\\
+&amp;(A+-B)^T=A^T+-B^T\\
+&amp;(AB)^T=B^TA^T=BA\neq{AB}\\
+&amp;{一般来说，对称矩阵相乘，结果不是对称矩阵}\\
+&amp;定理:若AB对称\Leftrightarrow{AB可交换}(看32)
+\end{align}
+\]</span></p>
+<p>（反对称矩阵与叉乘有关）</p>
+<h2 id="逆矩阵">4、逆矩阵</h2>
+<p><strong>tips：不要把矩阵放在分母上</strong></p>
+<p>​ <strong>逆矩阵便是线性代数中构造的逆元</strong></p>
+<h3 id="方阵的行列式">1、方阵的行列式</h3>
+<p><span class="math display">\[
+A=\left(
+    \begin{matrix}
+        a_{11}&amp;a_{12}&amp;\cdots&amp;a_{1n}\\
+        a_{21}&amp;a_{22}&amp;\cdots&amp;a_{2n}\\
+        \vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
+        a_{n1}&amp;a_{n2}&amp;\cdots&amp;a_{nn}
+    \end{matrix}
+\right)
+\quad
+|A|=\left|
+    \begin{matrix}
+        a_{11}&amp;a_{12}&amp;\cdots&amp;a_{1n}\\
+        a_{21}&amp;a_{22}&amp;\cdots&amp;a_{2n}\\
+        \vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
+        a_{n1}&amp;a_{n2}&amp;\cdots&amp;a_{nn}
+    \end{matrix}
+\right|\\
+\]</span></p>
+<h3 id="方针行列式性质">方针行列式性质</h3>
+<p><span class="math display">\[
+|A^T|=|A|\\
+|kA|=k^n|A|\\
+|AB|=|A||B|(多个方阵亦成立)
+\]</span></p>
+<h3 id="伴随矩阵">2、伴随矩阵</h3>
+<p><strong>tips：只有方阵有伴随矩阵</strong></p>
+<p>设存在n阶方阵，A_ij为|A|中a_ij的代数余子式 <span class="math display">\[
+A=(a_{ij})=\widetilde{A}=\left(
+    \begin{matrix}
+    a_{11}&amp;a_{12}&amp;a_{13}&amp;\cdots&amp;a_{1n}\\
+    a_{21}&amp;a_{22}&amp;a_{23}&amp;\cdots&amp;a_{2n}\\
+    \vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;a_{3n}\\
+    a_{n1}&amp;a_{n2}&amp;a_{n3}&amp;\cdots&amp;a_{nn}
+    \end{matrix}
+\right)
+\]</span> 则A的伴随矩阵为，<strong>(按行求，按列放)</strong> <span class="math display">\[
+A^*=\left(
+    \begin{matrix}
+    A_{11}&amp;A_{21}&amp;A_{31}&amp;\cdots&amp;A_{n1}\\
+    A_{12}&amp;A_{22}&amp;A_{32}&amp;\cdots&amp;A_{n2}\\
+    \vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
+    A_{1n}&amp;A_{2n}&amp;A_{3n}&amp;\cdots&amp;A_{nn}
+    \end{matrix}
+\right)
+\]</span></p>
+<h3 id="伴随矩阵性质">伴随矩阵性质</h3>
+<p><span class="math display">\[
+AA^{*}=A^{*}A=|A|E\\
+(证明参考行列式中的异乘定理)\\
+A^{-1}=\frac{1}{|A|}A^*\\
+|A^*|=|A|^{n-1}(不管|A|等不等于0，证明)\\
+{(A^*)}^*\quad{ {(A^*)}^*}^*的结果?
+\]</span></p>
+<h3 id="逆矩阵-1">3、*逆矩阵</h3>
+<h4 id="定义-1">定义</h4>
+<p>设A为n阶方阵，如果存在n阶方阵B使得，AB=BA=E(为n阶单位方阵)</p>
+<p>则称A是可逆的，B为A的逆矩阵，不存在B称A不可逆 <span class="math display">\[
+记A的逆矩阵为A^{ -1 }
+\]</span> <strong>注意：</strong></p>
+<ul>
+<li>未必所有方阵可逆</li>
+<li>可逆的方阵，逆矩阵唯一</li>
+</ul>
+<p><strong>唯一性证明：</strong>设AB=E,AC=E，则C=C6yE=C(AB)=(CA)B=B</p>
+<h4 id="性质-1">性质</h4>
+<p><span class="math display">\[
+\begin{align}
+&amp;若A可逆，则A^{-1},且{(A^{-1})}^{-1}\\
+&amp;若A_1,A_2,\cdots,A_s可逆，则他们的乘积也可逆，并且{(A_1A_2A_3\cdots{A})}={A_1}^{-1}{A_2}^{-1}\cdots{A_s}^{-1}\\
+&amp;若A可逆，则A^T也可逆，且(A^T)^{-1}={(A^{-1})}^T
+\end{align}
+\]</span></p>
+<h4 id="如何判断可逆">如何判断可逆</h4>
+<p><strong>tips：若方阵|A|≠0，则称该矩阵非奇异，非退化，满秩，可逆</strong></p>
+<p>判断定理：</p>
+<ol type="1">
+<li><p>若矩阵A有全零行(或全零列)，那么矩阵A一定不可逆</p></li>
+<li><p>A可逆的充要条件为|A|≠0 <span class="math display">\[
+A^{-1}=\frac{1}{|A|}A^*
+\]</span></p></li>
+</ol>
+<h4 id="逆矩阵怎么求">逆矩阵怎么求</h4>
+<p>定义中的推论：A,B都是n阶方针，AB=E或BA=E，证明其中一个即可说明B是A的逆矩阵</p>
+<ul>
+<li>伴随矩阵法（很少用）</li>
+<li>初等变换法（更常用）</li>
+</ul>
+<p><strong>(解矩阵方程常用)</strong></p>
+<h2 id="分块矩阵">5、分块矩阵</h2>
+<p>注意分块矩阵的划分是直来直去的，</p>
+<h3 id="分块矩阵的运算">分块矩阵的运算</h3>
+<p>分块矩阵的运算，要求A和B的划分方式要让A,B每个字块可加，可乘</p>
+<ul>
+<li>加法A+B(保证对应的两个子块规格相同)</li>
+<li>数乘kA</li>
+<li>乘法AB(A的列分块方式和B的行分块方式保持一致)</li>
+</ul>
+<h3 id="分块矩阵的行列式运算">*分块矩阵的行列式运算</h3>
+<p>(拉普拉斯展开定理) <span class="math display">\[
+|H|=\left|
+    \begin{matrix}
+    A&amp;C\\
+    O&amp;B\\
+    \end{matrix}
+\right|
+=
+|A||C|
+\]</span> 这个定理，不是把子块当作元素求出，而是用拉普拉斯展开定理证得。(看<a target="_blank" rel="noopener" href="https://ccjou.wordpress.com/2013/06/07/%E5%88%86%E5%A1%8A%E7%9F%A9%E9%99%A3%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F/">相关网站</a>）</p>
+<h3 id="分块矩阵的转置">分块矩阵的转置</h3>
+<p>实现步骤：</p>
+<ul>
+<li>把子块当做元素进行转置</li>
+<li>把每个子块进行转置</li>
+</ul>
+<h3 id="分块对角阵">分块对角阵</h3>
+<h2 id="矩阵的初等变换和初等矩阵">6、矩阵的初等变换和初等矩阵</h2>
+<h3 id="初等行变换">初等行变换</h3>
+<ul>
+<li><p>交换两行 <span class="math display">\[
+r_i\rightarrow{r_j}(交换i，j两行)
+\]</span></p></li>
+<li><p>某一行乘以非零数k <span class="math display">\[
+kr_{i}(k\neq0)
+\]</span></p></li>
+<li><p>将矩阵某一行的倍数加到另一行 <span class="math display">\[
+r_j+kr_{i}(将矩阵第i行的k倍加到第j行)
+\]</span></p></li>
+</ul>
+<p><strong>将"行"换成"列"即可得到 初等列变换 的定义</strong></p>
+<p>显然，三种变换都是 <strong>可逆</strong> 的。</p>
+<h3 id="初等行变换后-矩阵行列式的变化">初等行变换后 矩阵行列式的变化</h3>
+<p>矩阵进行初等行变化之后，发生了变化，但还是那个矩阵</p>
+<p>当|A|是方阵时，进行初等行变化会有以下性质(</p>
+<ul>
+<li>对换定理，交换两行，行列式变号</li>
+<li>倍乘定理，k乘以某一行，行列式乘以k</li>
+<li>倍加定理，行列式不变</li>
+</ul>
+<p>初等行变化的本质是对矩阵的变化，但矩阵还是那个矩阵，但行列式发生了变化(初等变换下，矩阵和行列式的关系)</p>
+<h3 id="初等变换的性质">初等变换的性质</h3>
+<ul>
+<li>自反性</li>
+<li>对称性</li>
+<li>传递性</li>
+</ul>
+<h3 id="阶梯形矩阵和标准形">*阶梯形矩阵和标准形</h3>
+<p>定理：任意矩阵可以通过有限次初等变化化成标准形(行变化，列变化，或者组合)</p>
+<figure>
+<img src="D:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E7%BA%BF%E4%BB%A3Note.assets/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAeWt6Y3MyMDAw,size_20,color_FFFFFF,t_70,g_se,x_16.png" srcset="/img/loading.gif" lazyload alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>行最简形矩阵</p>
+<figure>
+<img src="D:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E7%BA%BF%E4%BB%A3Note.assets/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAeWt6Y3MyMDAw,size_20,color_FFFFFF,t_70,g_se,x_16-16502687454271.png" srcset="/img/loading.gif" lazyload alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>标准形矩阵</p>
+<figure>
+<img src="D:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E7%BA%BF%E4%BB%A3Note.assets/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAeWt6Y3MyMDAw,size_20,color_FFFFFF,t_70,g_se,x_16-16502687454272.png" srcset="/img/loading.gif" lazyload alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<h3 id="初等方针">初等方针</h3>
+<p>对n阶单位矩阵E实施一次初等变换得到的矩阵称为n阶初等矩阵</p>
+<p>$$ <span class="math display">\[\begin{align}
+4x4单位矩阵举例:
+E&amp;=\left(
+    \begin{matrix}
+        1&amp;&amp;&amp;\\
+         &amp;1&amp;&amp;\\
+         &amp;&amp;1&amp;\\
+         &amp;&amp;&amp;1\\
+    \end{matrix}
+\right)\\
+
+E(i,j)&amp;=\left(
+    \begin{matrix}
+         &amp;1&amp;&amp;\\
+         1&amp;&amp;&amp;\\
+         &amp;&amp;1&amp;\\
+         &amp;&amp;&amp;1\\
+    \end{matrix}
+\right)(i=2,j=1)\\
+
+E(i(k))&amp;=\left(
+    \begin{matrix}
+        1&amp;&amp;&amp;\\
+         &amp;5&amp;&amp;\\
+         &amp;&amp;1&amp;\\
+         &amp;&amp;&amp;1\\
+    \end{matrix}
+\right)(i=2,k=5)\\
+
+E(i(k),j)&amp;=\left(
+    \begin{matrix}    
+         &amp;5&amp;&amp;\\
+         1&amp;&amp;&amp;\\
+         &amp;&amp;1&amp;\\
+         &amp;&amp;&amp;1\\
+    \end{matrix}
+\right)(i=2,k=5,j=1)
+\end{align}\]</span> <span class="math display">\[
+易得，初等矩阵都是可逆的，且初等矩阵的逆矩阵是同一类形初等方阵即
+\]</span> {E(i,j)}^{-1}=E(i,j) \ {E(i(k))}^{-1}=E(i()) \ {E(i(k),j))}^{-1}=E(i(-k),j) $$ <strong>初等方针是用来描述初等变化的矩阵算子</strong></p>
+<p>左行右列(变换算子代表的是初等行变换的时候)</p>
+<h3 id="方阵可逆的判别条件根据初等矩阵和初等变换">方阵可逆的判别条件(根据初等矩阵和初等变换)</h3>
+<p><span class="math display">\[
+\begin{align}
+&amp;任意矩阵可以通过有限次初等变换化成标准型\\
+&amp;定理1:任意矩阵A存在有限个初等矩阵(行变化初)P_1,P_2,P_3,\cdots,{P_s},(列变化)Q_1,Q_2,Q_3,\cdots{Q_t},\\
+&amp;使得P_1P_2P_3\cdots{P_s}AQ_1Q_2Q_3\cdots{Q_t}为标准型\\
+&amp;推论:A,B等价\Leftrightarrow存在可逆据矩阵P，Q,使得PAQ=B\\
+&amp;定理2:A可逆\Leftrightarrow{A的标准型为E(单位矩阵)}\\
+&amp;定理3:A可逆\Leftrightarrow{A={P_1}^{-1}{P_2}^{-1}\cdots{P_s}^{-1}}{Q_1}^{-1}{Q_2}^{-1}{Q_3}^{-1}\cdots{Q_t}^{-1}
+\end{align}
+\]</span></p>
+<p>上述定理可以总结为： <span class="math display">\[
+n阶方阵可逆\Leftrightarrow方阵A行等价于n阶单位矩阵E\Leftrightarrow方阵A可以表示为一些初等方阵的乘积
+\]</span></p>
+<h3 id="初等变化法的具体方法">初等变化法的具体方法</h3>
+<ol type="1">
+<li>首先构造分块矩阵(A|E)</li>
+<li>对分块矩阵实施初等行变换，将该分块矩阵化成行最简形矩阵</li>
+<li>判断：如果A不能行等价于单位矩阵E，则矩阵A不可逆（或者说A块出现全零行）；如果A能行等价于E(A块没有全零行)，则A可逆，E块就行等价于A-1（即E块部分就是所求逆矩阵）</li>
+</ol>
+<p>注意：</p>
+<p>化阶梯形时，对第一行，第二行，第三行的阶梯化简，要依次进行，整行进行操作</p>
+<h2 id="矩阵的秩与向量组的秩不同">7、矩阵的秩（与向量组的秩不同）</h2>
+<h3 id="定义-2">定义</h3>
+<p>mxn的矩阵A，其<strong>非零子式的最高阶数</strong>就是A的秩，记r(A)</p>
+<h3 id="性质-2">性质</h3>
+<p>1、对于矩阵A_mxn</p>
+<p>0≤r(A)≤min{m,n}</p>
+<p>满秩：r(A)=m,称为行满秩；r(A)=n，称为列满秩</p>
+<p>降秩：r(A)&lt;min(m,n)</p>
+<p><strong>注意：</strong>对于n阶方阵，若其满秩r(A)=n,即该方阵的n阶子式不等于0，意味着该方阵的行列式不等于0，该方阵可逆</p>
+<p>2、r(A)=r(A^T)</p>
+<p>3、初等变换不改变矩阵的秩</p>
+<p>4、矩阵乘以可逆矩阵，秩不变</p>
+<p>*<strong>性质4的推论：</strong>P为m'阶可逆方阵，Q为n阶可逆方阵</p>
+<p>r(A)=r(PA)=r(AQ)=r(PAQ)</p>
+<p><strong>定理：</strong>r(A)=r 等价于 有一个r阶子式不为0，r以上的高阶子式都为0</p>
+<p>(代数余子式展开即可)</p>
+<h3 id="阶梯形矩阵">*阶梯形矩阵</h3>
+<figure>
+<img src="D:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E7%BA%BF%E4%BB%A3Note.assets/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAeWt6Y3MyMDAw,size_20,color_FFFFFF,t_70,g_se,x_16.png" srcset="/img/loading.gif" lazyload alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>左起首非零元的零的个数按行的增加而严格增加</p>
+<p><strong>阶梯形矩阵判断：</strong>横线可跨多个列，竖线只跨一个数</p>
+<h3 id="行最简化阶梯形矩阵">*行最简化阶梯形矩阵</h3>
+<p>运用到的地方：极大相关组极其线性表示，解线性方程组（高斯消元法），矩阵方程，特征值和特征向量（就是求矩阵方程）</p>
+<p><strong>定义：</strong></p>
+<figure>
+<img src="D:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E7%BA%BF%E4%BB%A3Note.assets/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAeWt6Y3MyMDAw,size_20,color_FFFFFF,t_70,g_se,x_16-16502687454271.png" srcset="/img/loading.gif" lazyload alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p><strong>三步走判断：</strong></p>
+<ul>
+<li>折线判断阶梯形</li>
+<li>首非零元1画竖线</li>
+<li>非零元所在列其余元素是0</li>
+</ul>
+<h3 id="矩阵的秩判断和线性表示">矩阵的秩判断和线性表示</h3>
+<p><strong>定理1:</strong>矩阵的初等变换(行和列皆可以）不改变矩阵的秩</p>
+<p><strong>定理2：</strong>矩阵通过初等变化变成阶梯形矩阵，矩阵的秩等于其非零行的行数</p>
+<h1 id="向量">向量</h1>
+<h2 id="定义-3">定义</h2>
+<p>由n个数a1，a2,……,an组成的有序数组称为n维向量，写成 <span class="math display">\[
+\left(
+    \begin{matrix}
+    a_1\\
+    a_2\\
+    \vdots\\
+    a_n
+    \end{matrix}
+\right)
+或
+(a_1,a_2,\cdots,a_n)
+\]</span> 分量都是0的称为零向量</p>
+<h2 id="向量的运算">向量的运算</h2>
+<ul>
+<li>相加相减</li>
+<li>数乘</li>
+<li>内积</li>
+<li>外积</li>
+</ul>
+<h2 id="向量组及其线性关系">向量组及其线性关系</h2>
+<h3 id="定义-4">定义</h3>
+<p>由n个维度相同的向量构成的集合，称为向量组</p>
+<p>一个矩阵可以表示成一个向量组，建立一 一对应的关系 <span class="math display">\[
+A=\left(
+    \begin{matrix}
+    a_{11}&amp;a_{12}&amp;a_{13}&amp;\cdots&amp;a_{1n}\\
+    a_{21}&amp;a_{22}&amp;a_{23}&amp;\cdots&amp;a_{2n}\\
+    \vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;a_{3n}\\
+    a_{n1}&amp;a_{n2}&amp;a_{n3}&amp;\cdots&amp;a_{nn}
+    \end{matrix}
+\right)
+=
+\left(
+    \begin{matrix}
+    \beta^T_1\\
+    \beta^T_2\\
+    \vdots\\
+    \beta^T_n
+    \end{matrix}
+\right)
+=
+(\alpha_1,\alpha_2,\cdots,\alpha_n)\\
+(\alpha_j为列向量，\beta_i为行向量)
+\]</span></p>
+<h3 id="向量组的等价">向量组的等价</h3>
+<p>两个同维向量组可以相互线性表示，称两向量组等价</p>
+<p>(与矩阵等价的定义作比较)</p>
+<p>性质：</p>
+<ul>
+<li>反身性</li>
+<li>对称性</li>
+<li>传递性</li>
+</ul>
+<h3 id="线性相关和线性无关">线性相关和线性无关</h3>
+<h4 id="线性相关">线性相关</h4>
+<p><span class="math display">\[
+存在一组不全为0的数k_1,k_2,\cdots,k_n,使得
+k_1\alpha_1+k_2\alpha_2+\cdots+k_n\alpha_n=0
+\]</span></p>
+<h4 id="线性无关">线性无关</h4>
+<p><span class="math display">\[
+找不到(不存在）一组不全为0的数k_1,k_2,\cdots,k_n,使得
+k_1\alpha_1+k_2\alpha_2+\cdots+k_n\alpha_n=0，
+只有全为0的解
+\]</span></p>
+<h4 id="性质-3">性质：</h4>
+<ol type="1">
+<li><p>向量组中两个向量成比例，该向量组必线性相关</p></li>
+<li><p>一个零向量必相关</p></li>
+<li><p>含零向量的任意向量组必相关</p></li>
+<li><p>一个非零向量必无关</p></li>
+<li><p>一个向量组线性相关，那么加上几个同维向量，向量组依旧线性相关（部分组相关，则整体组相关；整体组无关，部分组无关）</p></li>
+<li><p>线性无关的向量组，其接长向量组线性无关</p>
+<p>线性相关的向量组，其截短向量组线性相关(逆否）</p>
+<p>(这里接长和截短是对向量的维度分量的，从线性方程组证明)</p></li>
+<li><p>n个n维向量组成向量组，D≠0等价于向量组线性无关；</p>
+<p>D=0等价于向量组线性相关</p></li>
+</ol>
+<h3 id="线性相关的相关定理">线性相关的相关定理</h3>
+<p><span class="math display">\[
+\begin{align}
+&amp;\alpha_1,\cdots,\alpha_s相关\Leftrightarrow\beta可以由至少有一个向量由其余向量表示\\
+&amp;\alpha_1,\cdots,\alpha_s，\beta无关\Leftrightarrow\beta可以由\alpha_1,\cdots,\alpha_s唯一线性表示\\
+&amp;*替换定理:\alpha_1,\cdots,\alpha_s无关，可由\beta_1，\cdots,\beta_t表示,则s&lt;=t\\
+&amp;逆否:\alpha_1,\cdots,\alpha_s可由\beta_1，\cdots,\beta_t表示，s&gt;t，则\alpha_1,\cdots,\alpha_s线性相关\\
+&amp;*若向量的个数m大于向量的维数n，m&gt;n，则该m个向量必线性相关\\
+&amp;推论:两个等价的线性无关组所含向量的个数是相同的
+\end{align}
+\]</span></p>
+<h2 id="向量组的秩">向量组的秩</h2>
+<h3 id="极大线性无关组和秩">极大线性无关组和秩</h3>
+<h4 id="极大线性无关组定义">极大线性无关组定义</h4>
+<p><span class="math display">\[
+在一个n维向量组中取出s个向量\alpha_1,\cdots,\alpha_s\\
+\alpha_1,\cdots,\alpha_s线性无关，向量组其余向量都可以由这s个向量线性表示，\\
+则称这s个向量为该向量组的极大线性无关组
+\]</span></p>
+<p><strong>向量组的秩即对应的极大线性无关组的个数</strong></p>
+<p>(与矩阵的秩定义------非零子式的最高阶数 是不同的，但有联系)</p>
+<h4 id="性质-4">性质</h4>
+<p>对于一个向量组（α1，……，αs）</p>
+<ul>
+<li>0≤r（α1，……，αs）≤{向量的个数，维度数}</li>
+<li>α1，……，αs 无关 等价于 r=s</li>
+<li>α1，……，αs 相关 等价于 r&lt;s</li>
+</ul>
+<h4 id="相关定理">相关定理</h4>
+<p>1，任意向量与对应极大线性无关组等价</p>
+<p>2，等价的向量组秩相等（等价传递性）</p>
+<p>3、一个向量组线性无关的充要条件是它的秩等于向量的个数</p>
+<h3 id="矩阵的行秩和列秩">矩阵的行秩和列秩</h3>
+<p>矩阵的行秩=矩阵的列秩=矩阵的秩r(A)</p>
+<p>(非零子式的最高阶数)</p>
+<p>r(AB)≤min{r(A),r(B)}</p>
+<h3 id="求极大线性无关组及线性表示">求极大线性无关组及线性表示</h3>
+<p>引理：矩阵仅作初等<strong>行变化</strong>不改变矩阵<strong>列向量</strong>之间的线性关系</p>
+<p>也就是说，初等行变化之后，无关依旧无关，相关依旧相关</p>
+<p><strong>求解步骤：</strong></p>
+<ol type="1">
+<li>按列向量构成矩阵</li>
+<li>只做初等行变换，化成最简化阶梯形</li>
+<li>首非零元1所在列即是极大线性无关组</li>
+<li>其余向量的线性表示用从行简化阶梯形直接对应读出</li>
+</ol>
+<figure>
+<img src="C:\Users\L\OneDrive\桌面\开学文件\Typora%20Note\线代Note.assets\image-20220320124851567.png" srcset="/img/loading.gif" lazyload alt="image-20220320124851567" /><figcaption aria-hidden="true">image-20220320124851567</figcaption>
+</figure>
+<h2 id="线性方程组有解判定4">线性方程组有解判定4</h2>
+<p>首先将增广矩阵化成行最简化形 <span class="math display">\[
+\begin{align}
+&amp;系数矩阵{A}=\left(
+    \begin{matrix}
+    a_{11}&amp;a_{12}&amp;a_{13}&amp;\cdots&amp;a_{1n}\\
+    a_{11}&amp;a_{12}&amp;a_{13}&amp;\cdots&amp;a_{2n}\\
+    \vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;a_{3n}\\
+    a_{11}&amp;a_{12}&amp;a_{13}&amp;\cdots&amp;a_{mn}
+    \end{matrix}
+\right)
+\\
+&amp;增广矩阵\widetilde{A}=\left(
+    \begin{matrix}
+    a_{11}&amp;a_{12}&amp;a_{13}&amp;\cdots&amp;a_{1n}&amp;b_{1}\\
+    0&amp;a_{12}&amp;a_{13}&amp;\cdots&amp;a_{2n}&amp;b_{1}\\
+    \vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;a_{3n}&amp;\vdots\\
+    0&amp;0&amp;0&amp;\cdots&amp;a_{mn}&amp;b_{1}
+    \end{matrix}
+\right)\\
+&amp;当r(A)=r(\widetilde{A})=n,有唯一解\\
+&amp;当r(A)=r(\widetilde{A})&lt;n,有无穷多解\\
+&amp;当r(A)\neq{r(\widetilde{A})},无解\\
+&amp;(n是向量组向量个数，或未知数个数)
+\end{align}
+\]</span> 方程组m，n（m是方程个数，n是未知量个数）</p>
+<p><strong>判断流程：</strong></p>
+<ol type="1">
+<li><p>写出增广系数矩阵</p></li>
+<li><p>只做初等行变化，化为<u>行阶梯型</u></p></li>
+<li><p>看r(A)与r(A~是否相等)，相等有解，不相等无解</p></li>
+<li><p>有解的话，化<u>最简化阶梯型</u>，<strong>写出一般解</strong>，<strong>标出自由变量</strong></p>
+<p>(基础解系)</p></li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="../../../../tags/note/">note</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="../%E6%9E%81%E9%99%90/">
+                        <span class="hidden-mobile">极限</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="../../../../js/events.js" ></script>
+<script  src="../../../../js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="../../../../js/local-search.js" ></script>
+
+
+
+  
+    <script  src="../../../../js/img-lazyload.js" ></script>
+  
+
+
+
+  
+    
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="../../../../js/boot.js" ></script>
+
+
+</body>
+</html>
