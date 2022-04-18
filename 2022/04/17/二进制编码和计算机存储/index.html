@@ -18,26 +18,26 @@
   <meta name="author" content="bbski1014">
   <meta name="keywords" content="programming">
   
-    <meta name="description" content="参考资料：计算机科学导论 汇编原理（王爽） ​				   视频狂神说 1，进制转换进制只是一种对数字的编码方式​		我们因为身边的客观事物（10根手指）对十进制数字编码更为熟悉，但数的概念是独立的，数的运算法则是完备的，而进制只是数的表达方式，所以每一种进制在数字的运算法则上完备的。 ​		数的任何进制表达都是有序的，就像十进制一样（数表），我们在计算时，有“查数“的思想，就像是在十进制运算中中">
+    <meta name="description" content="参考资料：计算机科学导论 汇编原理（王爽） https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;bbski&#x2F;bbski1014.github.io@latest  关于二进制编码和存储知识参考资料：计算机科学导论 汇编原理（王爽） 视频狂神说 1，进制转换进制只是一种对数字的编码方式​		我们因为身边的客观事物（10根手指）对十进制数字编码更为">
 <meta property="og:type" content="article">
 <meta property="og:title" content="二进制编码和计算机存储">
 <meta property="og:url" content="https://bbski1014.github.io/2022/04/17/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E5%92%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%98%E5%82%A8/index.html">
 <meta property="og:site_name" content="BLOG~bbski">
-<meta property="og:description" content="参考资料：计算机科学导论 汇编原理（王爽） ​				   视频狂神说 1，进制转换进制只是一种对数字的编码方式​		我们因为身边的客观事物（10根手指）对十进制数字编码更为熟悉，但数的概念是独立的，数的运算法则是完备的，而进制只是数的表达方式，所以每一种进制在数字的运算法则上完备的。 ​		数的任何进制表达都是有序的，就像十进制一样（数表），我们在计算时，有“查数“的思想，就像是在十进制运算中中">
+<meta property="og:description" content="参考资料：计算机科学导论 汇编原理（王爽） https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;bbski&#x2F;bbski1014.github.io@latest  关于二进制编码和存储知识参考资料：计算机科学导论 汇编原理（王爽） 视频狂神说 1，进制转换进制只是一种对数字的编码方式​		我们因为身边的客观事物（10根手指）对十进制数字编码更为">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/bbski1014/Cloud_img/main/img_physicTestNote/20210514113026699.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/bbski1014/Cloud_img/main/img_physicTestNote/image-20210916222437567.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/bbski1014/Cloud_img/main/img_physicTestNote/201103302155504514.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/bbski1014/Cloud_img/main/img_physicTestNote/image-20210916135015023.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/bbski1014/Cloud_img/main/img_physicTestNote/image-20210916222354918.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/bbski1014/Cloud_img/main/img_physicTestNote/image-20210916222437567.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/bbski1014/Cloud_img/main/img_physicTestNote/image-20210916225129979.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E5%92%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%98%E5%82%A8.assets/20210514113026699-165013343878934.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E5%92%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%98%E5%82%A8.assets/image-20210916130538882-165013343879438.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E5%92%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%98%E5%82%A8.assets/201103302155504514-165013343878936.jpg">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E5%92%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%98%E5%82%A8.assets/image-20210916135015023-165013343879440.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E5%92%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%98%E5%82%A8.assets/image-20210916222354918-165013343879439.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E5%92%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%98%E5%82%A8.assets/image-20210916222437567-165013343879442.png">
+<meta property="og:image" content="d:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E5%92%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%98%E5%82%A8.assets/image-20210916225129979-165013343879441.png">
 <meta property="article:published_time" content="2022-04-16T17:25:05.000Z">
-<meta property="article:modified_time" content="2022-04-16T17:37:24.875Z">
+<meta property="article:modified_time" content="2022-04-16T18:25:42.256Z">
 <meta property="article:author" content="bbski1014">
 <meta property="article:tag" content="learning">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/bbski1014/Cloud_img/main/img_physicTestNote/20210514113026699.png">
+<meta name="twitter:image" content="d:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E5%92%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%98%E5%82%A8.assets/20210514113026699-165013343878934.png">
   
   
   <title>二进制编码和计算机存储 - BLOG~bbski</title>
@@ -224,7 +224,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.1k 字
+      2.3k 字
     </span>
   
 
@@ -233,7 +233,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      18 分钟
+      19 分钟
     </span>
   
 
@@ -274,13 +274,16 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：几秒前
+                  本文最后更新于：2 天前
                 
               </p>
             
             <div class="markdown-body">
               <p>参考资料：计算机科学导论 汇编原理（王爽）</p>
-<p>​				   视频<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ni4y1G7B9?p=10">狂神说</a></p>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;bbski&#x2F;bbski1014.github.io@latest<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
+
+<h1 id="关于二进制编码和存储知识"><a href="#关于二进制编码和存储知识" class="headerlink" title="关于二进制编码和存储知识"></a>关于二进制编码和存储知识</h1><p>参考资料：计算机科学导论 汇编原理（王爽）</p>
+<p>视频<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ni4y1G7B9?p=10">狂神说</a></p>
 <h3 id="1，进制转换"><a href="#1，进制转换" class="headerlink" title="1，进制转换"></a>1，进制转换</h3><h4 id="进制只是一种对数字的编码方式"><a href="#进制只是一种对数字的编码方式" class="headerlink" title="进制只是一种对数字的编码方式"></a>进制只是一种对数字的编码方式</h4><p>​		我们因为身边的客观事物（10根手指）对十进制数字编码更为熟悉，但数的概念是独立的，数的运算法则是完备的，而进制只是数的表达方式，所以每一种进制在数字的运算法则上完备的。</p>
 <p>​		数的任何进制表达都是有序的，就像十进制一样（数表），我们在计算时，有“查数“的思想，就像是在十进制运算中中，我们在运算时其实会调取熟记于心的九九加法表和九九乘法表（这些表记录了十进制个位基本运算）;<em><strong>要想对其他的进制套用十进制的运算模式</strong></em>，我们可以根据其他进制中，亦可以<em><strong>编制一个对应的”加乘表“</strong></em>，用<em><strong>”查数“</strong></em>的思想（或者说查表），即可对不同进制的数进行十进制算数模式的套用;其中减除的运算需要我们可以用加乘的逆运算思想进行匹配，从而得出结果。</p>
 <p>​		我们要注意我们要对不同进制的“个位数”进行预编码，例如十进制中我们有0-9，二进制中0和1，0-9不够用的我们可以用其他字符来代替，比如16进制我们可以用0-9以及A-F，<em><strong>也就是说只要我们愿意，我们也可以将十进制中的0-9化成其他的字符</strong></em>。</p>
@@ -300,18 +303,18 @@
 <p>​	进制中能被个位编码表达，八和16进制是无法直接进行“合位”转换的。</p>
 <p><strong>d.小数部分能否按权展开的确定</strong></p>
 <p>​	我们可以用将原进制转化为十进制，观察数的大小，再看这个小数能否以目标位权进行展开。</p>
-<p><img src="https://raw.githubusercontent.com/bbski1014/Cloud_img/main/img_physicTestNote/20210514113026699.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
+<p><img src="D:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E5%92%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%98%E5%82%A8.assets/20210514113026699-165013343878934.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
 <h3 id="2，机器码的编码：原码反码（一补数）补码（二补数）"><a href="#2，机器码的编码：原码反码（一补数）补码（二补数）" class="headerlink" title="2，机器码的编码：原码反码（一补数）补码（二补数）"></a>2，机器码的编码：原码反码（一补数）补码（二补数）</h3><p><strong>参考资料：</strong></p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhangziqiu/archive/2011/03/30/ComputerCode.html">详解</a>	<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/99082236">较简易解释</a>	<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/ffc97c4d2306">有关数据溢出</a>    </p>
 <p><strong>编码法则：</strong></p>
-<p><img src="https://raw.githubusercontent.com/bbski1014/Cloud_img/main/img_physicTestNote/image-20210916222437567.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="D:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E5%92%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%98%E5%82%A8.assets/image-20210916130538882-165013343879438.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 <p><strong>正数不变，负数要变，符号位需保留。（首位为符号位，0为正，1为负）</strong></p>
 <p><strong>补码为减法而生</strong>，我们为了方便，将机器码的首位设置为符号位，接着开始研究机器码的加减，发现过程中产生了一系列问题，最后用补码的方式解决了。</p>
 <p><strong>负数原码&gt;&gt;反码&gt;&gt;补码的过程实则是：取负数十进制的数值的绝对值，急着按位取反，接着补1，从而得到-1（10）在计算机中的二进制表达</strong>（这个结论可以通过n-x&#x3D;0的方式来判断）</p>
 <p><strong>补码的生活实例证明是时钟。</strong></p>
 <p><strong>整数型数据在计算机中，用补码表示。</strong></p>
-<p>​																					<img src="https://raw.githubusercontent.com/bbski1014/Cloud_img/main/img_physicTestNote/201103302155504514.jpg" srcset="/img/loading.gif" lazyload alt="clip_image001">			 	</p>
-<p><img src="https://raw.githubusercontent.com/bbski1014/Cloud_img/main/img_physicTestNote/image-20210916135015023.png" srcset="/img/loading.gif" lazyload alt="image-20210916135015023"></p>
+<p>​																					<img src="D:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E5%92%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%98%E5%82%A8.assets/201103302155504514-165013343878936.jpg" srcset="/img/loading.gif" lazyload alt="clip_image001">			 	</p>
+<p><img src="D:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E5%92%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%98%E5%82%A8.assets/image-20210916135015023-165013343879440.png" srcset="/img/loading.gif" lazyload alt="image-20210916135015023"></p>
 <p>此时, 表盘相当于每128个刻度转一轮. 所以用补码表示的运算结果最小值和最大值应该是[-128, 127]。</p>
 <p>一个数的反码, 实际上是这个数对于一个膜的同余数. 而这个膜并不是我们的二进制, 而是所能表示的最大值! 这就和钟表一样, 转了一圈后总能找到在可表示范围内的一个正确的数值!</p>
 <h3 id="3-位运算"><a href="#3-位运算" class="headerlink" title="3.位运算"></a>3.位运算</h3><p><a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/bit-operation.html">位运算概述</a></p>
@@ -346,8 +349,8 @@
 </ul>
 <p><strong>内存存储空间</strong></p>
 <p>物理存储器看似独立，其实都是与CPU总线相连，CPU通过控制总线对他们发出内存读写命令，所以，CPU把所有的存储器都当内存对待，看做一个有若干存储单元组成的逻辑存储器，这就是所谓的内存地址空间。</p>
-<p><img src="https://raw.githubusercontent.com/bbski1014/Cloud_img/main/img_physicTestNote/image-20210916222354918.png" srcset="/img/loading.gif" lazyload></p>
-<p><img src="https://raw.githubusercontent.com/bbski1014/Cloud_img/main/img_physicTestNote/image-20210916222437567.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="D:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E5%92%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%98%E5%82%A8.assets/image-20210916222354918-165013343879439.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="D:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E5%92%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%98%E5%82%A8.assets/image-20210916222437567-165013343879442.png" srcset="/img/loading.gif" lazyload></p>
 <p><strong>CPU组成</strong></p>
 <ul>
 <li>运算器（信息处理）</li>
@@ -356,7 +359,7 @@
 </ul>
 <p>（可能还有二级高速缓存）</p>
 <p><strong>关于CPU位数</strong>：</p>
-<p><img src="https://raw.githubusercontent.com/bbski1014/Cloud_img/main/img_physicTestNote/image-20210916225129979.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="D:/Myblog/bbksi1014.github.io/Blog/source/_posts/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81%E5%92%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%98%E5%82%A8.assets/image-20210916225129979-165013343879441.png" srcset="/img/loading.gif" lazyload></p>
 <h2 id="计算机程序运行的虚拟内存"><a href="#计算机程序运行的虚拟内存" class="headerlink" title="计算机程序运行的虚拟内存"></a>计算机程序运行的虚拟内存</h2>
             </div>
             <hr>
@@ -383,6 +386,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="../../18/%E6%9E%81%E9%99%90/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">极限</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
