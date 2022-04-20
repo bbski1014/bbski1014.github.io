@@ -18,15 +18,15 @@
   <meta name="author" content="bbski1014">
   <meta name="keywords" content="programming">
   
-    <meta name="description" content="第一章 面向对象和面向过程 面向过程 核心思想：功能分解 方法：自顶向下 逐层分解 设计范型：程序&#x3D;算法+数据结构 面向对象 以类的形式将 数据及对数据的相应操作以 类 的形式封装 作为一个整体 以类的对象 作为程序的基本单位 通过向对象发送 消息 启动相关操作 类的特征：（组成） 静态特征 数据成员 动态特性 成员函数 类与对象 抽象与具体 类型与变量 面向对象 基本概念 特征：">
+    <meta name="description" content="Cpp速记 第一章 面向对象和面向过程 面向过程 核心思想：功能分解 方法：自顶向下 逐层分解 设计范型：程序&#x3D;算法+数据结构 面向对象 以类的形式将 数据及对数据的相应操作以 类 的形式封装 作为一个整体 以类的对象 作为程序的基本单位 通过向对象发送 消息 启动相关操作 类的特征：（组成） 静态特征 数据成员 动态特性 成员函数 类与对象 抽象与具体 类型与变量 面向对象 基本">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cpp速记">
 <meta property="og:url" content="https://bbski1014.github.io/2022/04/16/Cpp%E9%80%9F%E8%AE%B0/index.html">
 <meta property="og:site_name" content="BLOG~bbski">
-<meta property="og:description" content="第一章 面向对象和面向过程 面向过程 核心思想：功能分解 方法：自顶向下 逐层分解 设计范型：程序&#x3D;算法+数据结构 面向对象 以类的形式将 数据及对数据的相应操作以 类 的形式封装 作为一个整体 以类的对象 作为程序的基本单位 通过向对象发送 消息 启动相关操作 类的特征：（组成） 静态特征 数据成员 动态特性 成员函数 类与对象 抽象与具体 类型与变量 面向对象 基本概念 特征：">
+<meta property="og:description" content="Cpp速记 第一章 面向对象和面向过程 面向过程 核心思想：功能分解 方法：自顶向下 逐层分解 设计范型：程序&#x3D;算法+数据结构 面向对象 以类的形式将 数据及对数据的相应操作以 类 的形式封装 作为一个整体 以类的对象 作为程序的基本单位 通过向对象发送 消息 启动相关操作 类的特征：（组成） 静态特征 数据成员 动态特性 成员函数 类与对象 抽象与具体 类型与变量 面向对象 基本">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-16T10:35:55.000Z">
-<meta property="article:modified_time" content="2022-04-16T10:50:31.702Z">
+<meta property="article:modified_time" content="2022-04-20T10:49:34.597Z">
 <meta property="article:author" content="bbski1014">
 <meta property="article:tag" content="learning">
 <meta name="twitter:card" content="summary_large_image">
@@ -216,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.9k 字
+      5.5k 字
     </span>
   
 
@@ -225,7 +225,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      25 分钟
+      46 分钟
     </span>
   
 
@@ -266,12 +266,13 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：4 天前
+                  本文最后更新于：几秒前
                 
               </p>
             
             <div class="markdown-body">
-              <h2 id="第一章-面向对象和面向过程">第一章 面向对象和面向过程</h2>
+              <h1 id="cpp速记">Cpp速记</h1>
+<h2 id="第一章-面向对象和面向过程">第一章 面向对象和面向过程</h2>
 <h4 id="面向过程">面向过程</h4>
 <p>核心思想：功能分解 方法：自顶向下 逐层分解 设计范型：程序=算法+数据结构</p>
 <h4 id="面向对象">面向对象</h4>
@@ -374,9 +375,9 @@
 <p>关键字：public，private（只能被该类成员函数访问），protected（只允许该类及其派生类成员函数访问）</p>
 <p>（缺省时默认时私有private）</p>
 <p>区分三种属性的作用</p>
-<h3 id="this指针">this指针</h3>
-<p>每一个成员，1每个成员函数都有一个特殊的隐含指针，即this指针，用以存放当前对象的地址</p>
-<p>对象调用成员函数——&gt;对象内存中地址传递给this指针——&gt;调用用成员函数，通过this指针调用实例对象值——&gt;返回值</p>
+<h3 id="this指针">*this指针</h3>
+<p>每一个成员，每个成员函数都有一个特殊的隐含指针，即this指针，用以存放当前对象的地址</p>
+<p>对象调用成员函数——&gt;对象内存中地址传递给this指针，初始化改指针常量——&gt;调用用成员函数，通过this指针调用实例对象值——&gt;返回值</p>
 <p><strong>内存空间的分配是从高地址开始的</strong></p>
 <h3 id="构造函数和析构函数">构造函数和析构函数</h3>
 <p>这两种特殊函数，由系统自动调用</p>
@@ -394,13 +395,14 @@
 <p>即类内只给出原型，而在类外实现时，默认形参也应该放在原型中</p>
 <p>带默认参数的构造函数比较安全</p>
 <h4 id="初始化列表">初始化列表</h4>
+<p>初始化列表 初始化顺序只和成员变量声明顺序相关</p>
 <p>某些数据成员初始化的唯一方法：</p>
 <ul>
 <li>需要初始化的数据成员是对象的情况(这里包含了继承情况下，通过显示调用父类的构造函数对父类数据成员进行初始化)；</li>
 <li>需要初始化const修饰的类成员或初始化引用成员数据；</li>
 <li>子类只能用列表初始化父类的私有成员；</li>
 </ul>
-<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">class Test
+<div class="code-wrapper"><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">class Test
 &#123;
 	private:
 		int a;
@@ -414,9 +416,10 @@ class Test2:public Test
 		&#125;;
 
 &#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+<p>引用和常量的初始化 只能用 初始化列表</p>
 <h4 id="复制构造函数">复制构造函数</h4>
 <p>不自定义会自动生成</p>
-<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">类名(const 类名 对象名);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
+<div class="code-wrapper"><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">类名(const 类名 对象名);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 <p>系统调用复制构造函数的三种情况：</p>
 <ol type="1">
 <li>明确表示由一个一定义的对象初始化一个新对象</li>
@@ -436,10 +439,183 @@ class Test2:public Test
 <li>对象生命期结束时系统自动自动调用</li>
 <li>delete释放用new申请的内存，也会自动调用</li>
 </ul>
-<h4 id="规则析构函数的调用顺序永远和构造函数的相反">规则：析构函数的调用顺序永远和构造函数的相反</h4>
+<p>析构函数和delete</p>
+<h4 id="调用规则">*调用规则：</h4>
+<p>析构函数的调用顺序永远和构造函数的相反</p>
+<p>类定义中有对象成员时，构造函数的调用是 由内到外的（先构造对象成员，在构造整个对象）</p>
+<p>（总结一下各种特殊函数的调用顺序）</p>
 <h3 id="深复制和浅复制">深复制和浅复制</h3>
 <p>浅复制容易产生指针悬挂的问题</p>
 <p>在复制构造函数换和对象赋值运算中会存在该问题</p>
+<h3 id="静态成员">静态成员</h3>
+<p>必须在类外进行</p>
+<div class="code-wrapper"><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">类型 类名::静态数据成员名&#x3D;初始值	&#x2F;&#x2F;只能在类外进行初始化
+e.g:
+int Test::Count&#x3D;0;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div>
+<p><strong>访问格式</strong></p>
+<div class="code-wrapper"><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">Test::Count
+或者
+Test t
+t.Count<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div>
+<p>静态成员没有this指针，无法调用非静态函数，只能调用静态成员数据</p>
+<p>static const 可以让数据只保存一份副本 减少空间开销</p>
+<p><strong>静态常数据成员</strong></p>
+<div class="code-wrapper"><pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">static const type name<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
+<p>初始化不能在初始化列表</p>
+<p>在类定义结束后，单独初始化</p>
+<p>也可以在类定义中初始化</p>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">const typename Test::name&#x3D;value;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
+<h3 id="常对象">常对象</h3>
+<p>定义常对象必须初始化</p>
+<p>this指针是一个指针常量，成员函数中访问对象中的数据成员会隐式使用this指</p>
+<p>常对象只能调用常成员和常成员函数</p>
+<p><strong>常数据成员和常成员函数</strong>：</p>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">const typename;	&#x2F;&#x2F;只能在构造函数初始化列表进行初始化<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">typename function() const;	&#x2F;&#x2F;const声明让this指针可以指向常对象可以作为函数重载的标志<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
+<p><strong>tips：</strong></p>
+<ul>
+<li>常成员函数不能调用未经关键字const修饰的成员函数，但是普通成员函数是可以调用常成员函数的</li>
+<li>当类中的一个函数有普通函数版本和const修饰的重载版本，常对象会直接调用const版本；普通函数会优先调用普通成员函数，若没有普通版本，则可以调用const版本</li>
+</ul>
+<h3 id="友元">友元</h3>
+<p>三种形式：</p>
+<ul>
+<li>友元函数——独立函数友元</li>
+<li>友元成员——某一个类中的成员函数声明友元</li>
+<li>友元类——某一个类声明友元</li>
+</ul>
+<p>friend关键字</p>
+<p><strong>tips:</strong></p>
+<ul>
+<li>友元函数的实现写在类外的时候，不用加关键字</li>
+<li>在类内给出实现时，默认内联函数</li>
+<li>声明友元成员和友元类的时候，记得加入前向声明</li>
+</ul>
+<h2 id="第四章-继承">第四章 继承</h2>
+<p>继承机制：</p>
+<p>对一个已存在的类进行属性和功能拓展，得到一个新的类</p>
+<p>注意继承带来的问题：</p>
+<p>访问属性变化，同名冲突等</p>
+<p><strong>C++支持多继承</strong>，旧的类叫做基类，新类叫做派生类</p>
+<h3 id="派生类">派生类</h3>
+<p><strong>定义：</strong></p>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">class 派生类名::继承方式 基类名[,基类名1,...,基类名2]
+&#123;
+
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div>
+<p>继承方式：public,private,proected</p>
+<p>基类的构造函数和析构函数不能被继承</p>
+<p>注意不同继承方式导致的基类成员在访问控制权限的变化</p>
+<p>派生类只负责直接基类的构造函数调用，若直接基类构造函数无需参数，可以不再初始化列表中列出</p>
+<p>使用virtual只有一份拷贝 虚继承体系中的每个类的对象访问的是同一份数据</p>
+<p><strong>用虚基类可以避免同名冲突问题</strong></p>
+<p><strong>虚基类构造函数只在最后一层调用才会发挥作用</strong></p>
+<p><strong>创建一个对象时，构造函数的调用顺序：</strong></p>
+<ul>
+<li>所有虚基类构造函数（按定义顺序）</li>
+<li>所有直接基类的构造函数（按定义顺序</li>
+<li>所有对象成员的构造函数（按定义顺序</li>
+<li>派生类自己的构造函数</li>
+</ul>
+<h3 id="赋值兼容规则">赋值兼容规则</h3>
+<p>相当于java中的上转型</p>
+<h2 id="第五章-多态">第五章 多态</h2>
+<p>多态性是指一种行为多种不同实现</p>
+<p>多态的实现：</p>
+<ul>
+<li>静态联编——编译时多态性</li>
+<li>动态联编——运行时多态性</li>
+</ul>
+<p>实现技术：</p>
+<ul>
+<li>静态——函数重载和运算符重载</li>
+<li>动态——继承、虚函数、基类的指针或引用等（虚基类不包括</li>
+</ul>
+<h3 id="运算符重载">运算符重载</h3>
+<p>重载方式：</p>
+<ul>
+<li><p>成员函数重载</p>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">e.g:
+	Complex operator + (形参);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></li>
+<li><p>友元函数重载</p>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">e.g:
+	friend Complex operator + (形参，)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></li>
+</ul>
+<p>注意：</p>
+<ul>
+<li><p>除了赋值运算符及符合赋值运算符的重载，其余运算符重载都能被派生类继承</p></li>
+<li><p>不能重载的运算符：</p>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">.	::	?:	sizeof	.*<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
+<li><p>运算符重载有隐式和显式两种调用</p></li>
+</ul>
+<p><strong>几种需要注意的运算符重载</strong>：</p>
+<ul>
+<li><p>=：只能重载为成员函数，不能被继承，注意深复制和浅复制问题</p>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">类名&amp; operator &#x3D; (const 类名&amp;);
+e.g:
+	CMessage&amp; Cmessage::operator &#x3D; (const Cmessage &amp;s);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></li>
+<li><p>[] : 带一个右操作数的运算符，只能重载为成员函数</p>
+<ul>
+<li>一定以某种类型的引用返回，从而使函数返回值可以作为左值</li>
+<li>形式参数表中有一个形参数</li>
+</ul></li>
+<li><p>提取运算符&gt;&gt; 和插入运算符&lt;&lt;：需要用友元函数进行重载，<strong>必须返回流类的引用</strong></p>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">类内声明：
+friend istream &amp; operator &gt;&gt;(istream &amp; in,用户自定义类型 &amp; obj);
+friend ostream &amp; operator &gt;&gt;(ostream &amp; out,const 用户自定义类型 &amp; &amp;obj);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></li>
+<li><p>后缀 ++和--的重载函数，形参列表中要增加一个int，但不必写形参名（a++）；前缀++（++a)不用+。</p></li>
+</ul>
+<h3 id="动态多态性实现">动态多态性实现</h3>
+<h4 id="虚函数">虚函数</h4>
+<p>定义：</p>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">virtual 返回类型 成员函数名(形参);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
+<p>作用：</p>
+<p>虚函数可以通过基类指针或引用访问基类和派生类中被声明为虚函数的同名函数</p>
+<p>条件：</p>
+<ul>
+<li>存在继承关系 且必须是 公有继承</li>
+<li>同名虚函数在基类和派生类中的函数原型完全一致（返回值类型 函数名 形参参数表)</li>
+<li>必须定义基类指针的引用和指针</li>
+</ul>
+<p><strong>tips：</strong></p>
+<ul>
+<li><p>静态成员函数、内联成员函数、构造函数不能声明为虚函数</p></li>
+<li><p>析构函数可以是虚函数，且往往声明为虚函数，即虚析构函数</p></li>
+<li><p>虚析构函数能保证申请的动态空间能被正常释放</p></li>
+</ul>
+<h3 id="抽象类">抽象类</h3>
+<p>定义：</p>
+<p>类中至少包含了一种纯虚函数的类，为所有派生类提供了统一的接口</p>
+<p>纯虚函数定义：</p>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">virtual 返回值类型 函数名( ) &#x3D; 0;	&#x2F;&#x2F;&quot;&#x3D;0&quot;声明这是一个纯虚函数<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
+<p><strong>tips：</strong></p>
+<ul>
+<li>抽象类不能生成对象，抽象类的派生类都应该重新定义该函数</li>
+<li>可以定义抽象类的指针或引用</li>
+<li>抽象类的基类只能是抽象类</li>
+<li>抽象类里还可以定义普通成员函数或者虚函数</li>
+</ul>
+<p>用到关键字virtual的情况：</p>
+<ul>
+<li>定义虚函数，虚基类</li>
+<li>友元函数、构造函数 静态函数 不能用virtual修饰</li>
+<li>普通成员函数 析构函数 常成员函数可以用virtual修饰</li>
+</ul>
+<h2 id="第六章-模板">第六章 模板</h2>
+<p>函数模板</p>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">template&lt;typename 形参1,typename2 形参2,...typename3 形参n&gt;
+返回值类型 函数名(形参表)
+&#123;
+
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+<p>类模板</p>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">template&lt;typename1 形参1,typename2 形参2,...typename3 形参n&gt;
+class 类名
+&#123;
+	
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+<p>实例化才可以进行使用</p>
+<p>函数模板也可以进行重载</p>
 
             </div>
             <hr>
