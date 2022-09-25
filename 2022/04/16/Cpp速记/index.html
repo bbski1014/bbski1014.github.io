@@ -26,7 +26,7 @@
 <meta property="og:description" content="Cpp速记  第一章 面向对象和面向过程  面向过程 核心思想：功能分解 方法：自顶向下 逐层分解 设计范型：程序&#x3D;算法+数据结构  面向对象 以类的形式将 数据及对数据的相应操作以 类 的形式封装 作为一个整体 以类的对象 作为程序的基本单位 通过向对象发送 消息 启动相关操作 类的特征：（组成） 静态特征 数据成员 动态特性 成员函数 类与对象 抽象与具体 类型与变量 面向对象 基本概念 特">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-16T10:35:55.000Z">
-<meta property="article:modified_time" content="2022-04-20T10:49:34.597Z">
+<meta property="article:modified_time" content="2022-05-21T14:17:49.491Z">
 <meta property="article:author" content="bbski1014">
 <meta property="article:tag" content="learning">
 <meta name="twitter:card" content="summary_large_image">
@@ -216,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      5.5k 字
+      6.2k 字
     </span>
   
 
@@ -225,7 +225,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      46 分钟
+      52 分钟
     </span>
   
 
@@ -266,7 +266,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：38 分钟前
+                  本文最后更新于：4 个月前
                 
               </p>
             
@@ -312,6 +312,9 @@
 流：一个对象到另一个对象的流动<br />
 cin&gt;&gt;输入时提取符后面只能跟变量 空格会分割数据<br />
 cout&lt;&lt;表达式可以</p>
+<p><strong>注意：</strong></p>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">cout&lt;&lt;fun1(a,b)&lt;&lt;fun2(a,c)&lt;&lt;endl; &#x2F;&#x2F;这里函数执行顺序是从右往左的<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
+<p>cout跟printf是不同的，cout输出float或double，是会将小数点后非有效数字的0去掉的，而printf里面以%f输出规定是以<strong>6位小数输出</strong>，不管是不是有效数字 25</p>
 <p>bool类型 常量true false（1 0<br />
 <strong>命名空间</strong><br />
 定义方式<br />
@@ -328,6 +331,9 @@ string类型的使用<br />
 <p>不能创建指针的引用～&amp;*p</p>
 <p>不能创建引用的数组（无法创建由引用组成的集合，但可以创建数组的引用）</p>
 <p>不能创建void类型引用</p>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">int&amp; a[3]; &#x2F;&#x2F; 错误
+int&amp;* p;   &#x2F;&#x2F; 错误
+int&amp; &amp;r;   &#x2F;&#x2F; 错误<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div>
 <p>用途：<br />
 作函数的形参 （引用参数扩大了引用变量的作用域，方便改变实参变量的值）<br />
 作函数返回值</p>
@@ -388,6 +394,21 @@ throw</p>
 &#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
 <p><strong>定义类的对象</strong></p>
 <div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">类名 对象名1，[对象2，……，对象n]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
+<p>定义类对象的几种方法：</p>
+<p>(1) 先声明类类型，然后再定义对象</p>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">class Student&#123;
+
+&#125;;
+
+Student stu1,stu2;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+<p>(2) 在声明类类型的同时定义对象</p>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">class Student&#123;
+
+&#125;stu1,stu2;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div>
+<p>(3) 定义匿名类，不出现类名，直接定义对象</p>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">class&#123;
+
+&#125;stu1,stu2;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div>
 <p><strong>访问数据成员</strong></p>
 <div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">对象名.成员<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 <p>在类定义内部，成员之间可直接访问</p>
@@ -400,11 +421,16 @@ throw</p>
 <h3 id="访问属性"><a class="markdownIt-Anchor" href="#访问属性"></a> *访问属性</h3>
 <p>关键字：public，private（只能被该类成员函数访问），protected（只允许该类及其派生类成员函数访问）</p>
 <p>（缺省时默认时私有private）</p>
-<p>区分三种属性的作用</p>
+<p><strong>区分三种属性的作用:</strong></p>
+<ul>
+<li>简单来说，派生类能访问基类的public, protected成员，继承过来权限不变，派生类对象只能访问基类public成员</li>
+<li>简单来说派生类可以访问基类的public, protected成员，继承过来之后变成自己私有的。 派生类的对象啥都不能访问。</li>
+<li>简单来说: 派生类可以访问基类的public, protected，继承过来都变成了protected，派生类对象啥都不能访问</li>
+</ul>
 <h3 id="this指针"><a class="markdownIt-Anchor" href="#this指针"></a> *this指针</h3>
 <p>每一个成员，每个成员函数都有一个特殊的隐含指针，即this指针，用以存放当前对象的地址</p>
 <p>对象调用成员函数——&gt;对象内存中地址传递给this指针，初始化改指针常量——&gt;调用用成员函数，通过this指针调用实例对象值——&gt;返回值</p>
-<p><strong>内存空间的分配是从高地址开始的</strong></p>
+<p><strong>内存地址开始的</strong></p>
 <h3 id="构造函数和析构函数"><a class="markdownIt-Anchor" href="#构造函数和析构函数"></a> 构造函数和析构函数</h3>
 <p>这两种特殊函数，由系统自动调用</p>
 <h4 id="构造函数"><a class="markdownIt-Anchor" href="#构造函数"></a> 构造函数：</h4>
@@ -498,7 +524,7 @@ t.Count<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <p><strong>常数据成员和常成员函数</strong>：</p>
 <div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">const typename;	&#x2F;&#x2F;只能在构造函数初始化列表进行初始化<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 <div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">typename function() const;	&#x2F;&#x2F;const声明让this指针可以指向常对象可以作为函数重载的标志<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
-<p><strong>tips：</strong></p>
+<p>*<strong>tips：</strong></p>
 <ul>
 <li>常成员函数不能调用未经关键字const修饰的成员函数，但是普通成员函数是可以调用常成员函数的</li>
 <li>当类中的一个函数有普通函数版本和const修饰的重载版本，常对象会直接调用const版本；普通函数会优先调用普通成员函数，若没有普通版本，则可以调用const版本</li>
@@ -543,6 +569,7 @@ t.Count<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <li>所有对象成员的构造函数（按定义顺序</li>
 <li>派生类自己的构造函数</li>
 </ul>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">A a &#x3D; A();	&#x2F;&#x2F;这样调用一个构造函数生成一个临时变量进行赋值 接着马上析构<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 <h3 id="赋值兼容规则"><a class="markdownIt-Anchor" href="#赋值兼容规则"></a> 赋值兼容规则</h3>
 <p>相当于java中的上转型</p>
 <h2 id="第五章-多态"><a class="markdownIt-Anchor" href="#第五章-多态"></a> 第五章 多态</h2>
